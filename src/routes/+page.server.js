@@ -1,5 +1,8 @@
 import { createPool } from '@vercel/postgres';
 import { sql } from "@vercel/postgres";
+import {POSTGRES_URL} from '$env/static/private';
+
+process.env.POSTGRES_URL = POSTGRES_URL;
 
 async function seed() {
   const createTable = await sql`
